@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  gateway:
+    image: openresty/openresty:alpine
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/nginx.conf:/usr/local/openresty/nginx/conf/nginx.conf:ro
+    depends_on:
+      - host_app
+      - remote_app
+
+  host_app:
+    build: ./host_app
+
+  remote_app:
+    build: ./remote_app
