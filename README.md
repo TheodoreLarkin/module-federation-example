@@ -3,10 +3,11 @@
 Simple module federation app based on two apps
 
 ## Architecture
-
+```
           ┌────────> host app <────┐
 gateway ──┤                        │ exported component 
           └────────> remote app ───┘
+```
 
 ## Quick Start
 
